@@ -1,6 +1,9 @@
 package model;
 
-public class Position {
+import javax.persistence.Entity;
+
+@Entity
+public class Position extends ModelBase {
 
     private String name;
 

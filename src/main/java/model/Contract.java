@@ -1,10 +1,17 @@
 package model;
 
-public class Contract {
+import javax.persistence.Entity;
+import javax.persistence.OneToOne;
+import java.util.Date;
+
+@Entity
+public class Contract extends ModelBase {
+    @OneToOne(optional = false)
     private Employee employee;
+    @OneToOne(optional = false)//esta opcion es requerido
     private Position position;
-    private Datee initDate;
-    private Datee endDate;
+    private Date initDate;
+    private Date endDate;
 
     public Employee getEmployee() {
         return employee;
@@ -22,19 +29,19 @@ public class Contract {
         this.position = position;
     }
 
-    public Datee getInitDate() {
+    public Date getInitDate() {
         return initDate;
     }
 
-    public void setInitDate(Datee initDate) {
+    public void setInitDate(Date initDate) {
         this.initDate = initDate;
     }
 
-    public Datee getEndDate() {
+    public Date getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Datee endDate) {
+    public void setEndDate(Date endDate) {
         this.endDate = endDate;
     }
 }
