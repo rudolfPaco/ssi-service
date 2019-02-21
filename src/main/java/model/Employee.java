@@ -12,8 +12,16 @@ public class Employee extends ModelBase {
     private String lastName;
     private Byte[] image;
 
+    public List<Contract> getContractList() {
+        return contractList;
+    }
+
+    public void setContractList(List<Contract> contractList) {
+        this.contractList = contractList;
+    }
+
     @OneToMany(mappedBy = "employee", fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
-    private List<Contract> contractList;
+    private List<Contract> contractList = new List();
 
     public String getFirstName() {
         return firstName;
