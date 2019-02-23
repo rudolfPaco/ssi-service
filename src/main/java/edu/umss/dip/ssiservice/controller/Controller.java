@@ -1,5 +1,6 @@
-package controller;
+package edu.umss.dip.ssiservice.controller;
 
+import edu.umss.dip.ssiservice.repositories.CategoryRepository;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 

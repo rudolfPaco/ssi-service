@@ -1,8 +1,10 @@
-package model;
+package edu.umss.dip.ssiservice.model;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
+@Table
 @Entity
 public class SubCategory extends ModelBase {
     private String name;

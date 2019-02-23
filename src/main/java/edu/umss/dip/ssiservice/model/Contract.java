@@ -1,15 +1,20 @@
-package model;
+package edu.umss.dip.ssiservice.model;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 import java.util.Date;
 
+@Table
 @Entity
 public class Contract extends ModelBase {
+
     @OneToOne(optional = false)
     private Employee employee;
+
     @OneToOne(optional = false)//esta opcion es requerido
     private Position position;
+
     private Date initDate;
     private Date endDate;
 

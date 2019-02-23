@@ -1,6 +1,7 @@
-package bootstrap;
+package edu.umss.dip.ssiservice.bootstrap;
 
-import model.*;
+import edu.umss.dip.ssiservice.model.*;
+import edu.umss.dip.ssiservice.repositories.*;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
@@ -95,7 +96,7 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> 
         contract.setInitDate(new Date(2010, 1, 1));
         contract.setPosition(position);
 
-        john.getContractList().add(contract);
+        john.getContracts().add(contract);
         employeeRepository.save(john);
         contractRepository.save(contract);
 

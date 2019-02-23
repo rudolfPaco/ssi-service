@@ -1,27 +1,26 @@
-package model;
+package edu.umss.dip.ssiservice.model;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
+import java.util.LinkedList;
 import java.util.List;
 
+@Table
 @Entity
 public class Employee extends ModelBase {
     private String firstName;
     private String lastName;
     private Byte[] image;
 
-    public List<Contract> getContractList() {
-        return contractList;
-    }
-
-    public void setContractList(List<Contract> contractList) {
-        this.contractList = contractList;
-    }
-
     @OneToMany(mappedBy = "employee", fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
-    private List<Contract> contractList = new List();
+    private List<Contract> contracts = new LinkedList<>();
+
+    public List<Contract> getContracts() {
+        return contracts;
+    }
+
+    public void setContracts(List<Contract> contracts) {
+        this.contracts = contracts;
+    }
 
     public String getFirstName() {
         return firstName;
